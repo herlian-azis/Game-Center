@@ -1,51 +1,35 @@
-import React, { Component } from 'react'
-import Card from '../components/Card'
-import Navbar from '../components/Navbar'
+import React, { useState } from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
+import Pagination from '../components/Pagination'
+import Card from '../components/Card'
+import useFetch from '../hooks/useFetch'
+// import Detail from '../components/DetailCard'
 
-class Game extends Component {
-    constructor() {
-        super()
-        this.state = {
-            title: 'game center',
-            games: []
-        }
-    }
+export default () => {
+    const [title] = useState('Game Center')
+    const [currentPage, setCurrentPage] = useState(2)
+    const [games] = useFetch(`https://api.rawg.io/api/games?page=${currentPage}`)
 
-    componentDidMount() {
-        fetch("https://rawg-video-games-database.p.rapidapi.com/games?page=4", {
-            method: "GET",
-            headers: {
-                "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
-                "x-rapidapi-key": "51d021caadmshd40705f29ef002fp15b5a9jsn6c16506723ef"
-            }
-        })
-            .then(resp => resp.json())
-            .then(data => {
-                this.setState({ games: data.results });
-            });
-    }
-    render() {
-        return (
-            <div>
-                <Navbar />
-                {/* <h2>{JSON.stringify(this.state.games[0])}</h2> */}
-                <Container>
-                    <Row >
-                        {this.state.games.map((game, i) => {
 
-                            return (
-                            <Col key={i}  md={4} className='mb-5' sm={6} >
-                                <Card key={i} game={game} />
+    // console.log(games.length, 'length')
+    // console.log(currentDetail, 'urll');
+    return (
+        <div>
+            <h1>{title}</h1>
+            <Container>
+                <Pagination
+                    currentPage={currentPage}
+                    onPages={page => setCurrentPage(page)} />
+                <Row >
+                    {games.map((game, i) => {
+                        return (
+                            <Col key={i} md={4} className='mb-5' sm={6} >
+                                <Card  key={i} game={game} />
                             </Col>
-                            )
-                        })}
-                    </Row>
-                </Container>
-            </div>
-
-        )
-    }
+                        )
+                    })}
+                </Row>
+            </Container>
+        </div>
+    )
 }
-
-export default Game

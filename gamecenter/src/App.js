@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Detail from './pages/DetailCard'
 import Favorite from './pages/Favorite.js'
+import NotFound from './pages/NotFound'
 import Navbar from '../src/components/Navbar'
 import { Provider } from 'react-redux'
 import store from './store'
@@ -29,7 +30,8 @@ const App = () => {
             <Route exact path='/detail/:gameId'>
               <Detail />
             </Route>
-<Route>Not FOUND</Route>
+
+            <Route path='*'><NotFound /></Route>
           </Switch>
         </Router>
 

@@ -8,10 +8,10 @@ const DetailCard = () => {
 	const { gameId } = useParams()
 	const [game, error2, loading1] = useFetchById(`https://api.rawg.io/api/games/${gameId}`)
 
-	console.log(game.genres[0]);
 	if (loading1) {
+		console.log(game.genres);
 		return (
-			<p>LODIINGGGGG</p>
+			<h1>LODIINGGGGG</h1>
 		)
 	}
 
@@ -37,14 +37,14 @@ const DetailCard = () => {
 				{/* })} */}
 
 				<ul>
-					<li><span class="icon icon-users"></span><span>1</span></li>
-					<li><span class="icon icon-clock"></span><span>15 min</span></li>
-					<li><span class="icon icon-level"></span><span>Hard level</span></li>
-					<li><span class="icon icon-calories"></span><span>248</span></li>
+					<li><span className="icon icon-users"></span><span>1</span></li>
+					<li><span className="icon icon-clock"></span><span>15 min</span></li>
+					<li><span className="icon icon-level"></span><span>Hard level</span></li>
+					<li><span className="icon icon-calories"></span><span>248</span></li>
 				</ul>
 				<p dangerouslySetInnerHTML={{__html:game.description}}/>
 
-				<p class="ingredients"><span>Platforms:&nbsp;</span>PS4, PS5</p>
+				<p className="ingredients"><span>Platforms:&nbsp;</span>PS4, PS5</p>
 
 			</article>
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const useFetchById = url => {
-    const [data, setData] = useState({genres:['undin']})
+    const [data, setData] = useState([])
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
 

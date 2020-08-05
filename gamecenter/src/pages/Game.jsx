@@ -8,11 +8,16 @@ import useFetch from '../hooks/useFetch'
 export default () => {
     const [title] = useState('Game Center')
     const [currentPage, setCurrentPage] = useState(2)
-    const [games] = useFetch(`https://api.rawg.io/api/games?page=${currentPage}`)
+    const [games,error ,loading] = useFetch(`https://api.rawg.io/api/games?page=${currentPage}`)
 
 
     // console.log(games.length, 'length')
     // console.log(currentDetail, 'urll');
+    if (loading) {
+        return(<p>
+            LOADINGG
+        </p>)
+    }
     return (
         <div>
             <h1>{title}</h1>

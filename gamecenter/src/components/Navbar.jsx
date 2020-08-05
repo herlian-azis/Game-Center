@@ -1,23 +1,21 @@
 import React, { } from 'react'
 import { Navbar, Nav, FormControl, Form, Button } from 'react-bootstrap'
-import {  Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const NavbarComponent = () => {
     return (
         <>
             <Navbar bg="light" expand="lg">
-                <Link to={{ pathname: '/' }}>
-                    <Navbar.Brand href="#home">Game Center</Navbar.Brand>
-                </Link>
+                <Navbar.Brand as={Link} to='/'>Game Center</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Link to={{ pathname: '/' }}>
-                            <Nav.Link href="#home">Home</Nav.Link>
-                        </Link>
-                        <Link to={{ pathname: '/favorites' }}>
-                            <Nav.Link href="#home">Favorites</Nav.Link>
-                        </Link>
+                        <Nav.Link as={Link} to='/'>
+                            Home
+                        </Nav.Link>
+                        <Nav.Link as={Link} to='/favorites'>
+                                Favorites
+                        </Nav.Link>
                         {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

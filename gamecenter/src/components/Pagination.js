@@ -4,20 +4,6 @@ import { Pagination } from 'react-bootstrap'
 
 const pages = ({ onPages, currentPage }) => {
 
-    // console.log(currentPage,'pagiee')
-    // const item = () =>{
-    //     const pagess=[]
-    //     for (let i = 0; i < 5; i++) {
-    //         pagess.push(
-    //          <Pagination.Item onClick={()=> onPages(currentPage+i)} active={currentPage==i} >{ i+currentPage} </Pagination.Item>
-
-    //         )
-
-    //     }
-    //     return pagess
-    // }
-    // console.log(item())
-
     return (
         <>
             <Pagination className='justify-content-center'>
@@ -27,8 +13,7 @@ const pages = ({ onPages, currentPage }) => {
                 {/* <Pagination.Ellipsis /> */}
 
                 {"1".repeat(10).split("").map((page, i) => {
-
-                    return <Pagination.Item onClick={() => onPages(1 + i)} active={currentPage === i + 1} >{i + 1} </Pagination.Item>
+                    return <Pagination.Item onClick={() => onPages(1 + i)} key={i} active={currentPage === i + 1} >{i + 1} </Pagination.Item>
 
                 })}
 

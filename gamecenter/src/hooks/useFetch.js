@@ -6,6 +6,7 @@ const useFetch = url => {
     const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
+        setLoading(true)
         fetch(url)
         .then(respone=>respone.json())
         .then(data => setData(data.results))

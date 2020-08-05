@@ -16,6 +16,7 @@ const CardComponent = (props) => {
             <p>Loadingg</p>
         )
     }
+
     const idfav = favorites.map(fav => {
         return fav.id
     })
@@ -35,7 +36,7 @@ const CardComponent = (props) => {
     return (
         <>
             {/* <h1>{this.props.game.name}</h1> */}
-            <Card className='shadow' style={{ width: '18rem' }}>
+            <Card className='shadow' style={{ width: '18rem',border: '0' }} >
                 <Card.Img variant="top" src={game.background_image} />
                 <Card.Body>
                     <Card.Title>{game.name}</Card.Title>

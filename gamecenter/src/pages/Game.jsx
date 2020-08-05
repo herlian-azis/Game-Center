@@ -3,20 +3,17 @@ import { Row, Col, Container } from 'react-bootstrap'
 import Pagination from '../components/Pagination'
 import Card from '../components/Card'
 import useFetch from '../hooks/useFetch'
-// import Detail from '../components/DetailCard'
-
+import Loading from './Loading/Loading'
 export default () => {
     const [title] = useState('Game Center')
     const [currentPage, setCurrentPage] = useState(2)
-    const [games,error ,loading] = useFetch(`https://api.rawg.io/api/games?page=${currentPage}`)
+    const [games, error, loading] = useFetch(`https://api.rawg.io/api/games?page=${currentPage}`)
 
 
     // console.log(games.length, 'length')
     // console.log(currentDetail, 'urll');
     if (loading) {
-        return(<p>
-            LOADINGG
-        </p>)
+        return (<Loading/>)
     }
     return (
         <div>
@@ -25,11 +22,12 @@ export default () => {
                 <Pagination
                     currentPage={currentPage}
                     onPages={page => setCurrentPage(page)} />
-                <Row >
+                <Row style={{ marginRight: -186 + 'px', 
+                            marginLeft: -127 + 'px'}} >
                     {games.map((game, i) => {
                         return (
-                            <Col key={i} md={4} className='mb-5' sm={6} >
-                                <Card  key={i} game={game} />
+                            <Col key={i} md={3} className='mb-5'   >
+                                <Card key={i} game={game} />
                             </Col>
                         )
                     })}

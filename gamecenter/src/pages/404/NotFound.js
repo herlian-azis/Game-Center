@@ -1,5 +1,5 @@
 import React, {  } from 'react'
-import './NotFound.css'
+import  classes from './NotFound.module.css'
 
 
 const NotFound =()=>{
@@ -9,9 +9,9 @@ const NotFound =()=>{
 
     return(
         <div>
-        <div id="notfound">
-          <div className="notfound">
-            <div className="notfound-404">
+        <div id={classes.notfound}>
+          <div className={classes.notfound}>
+            <div className={classes['notfound-404']}>
               <div></div>
               <h1>404</h1>
             </div>

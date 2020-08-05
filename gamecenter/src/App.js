@@ -3,9 +3,9 @@ import './App.css';
 import Game from './pages/Game'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Detail from './pages/DetailCard'
+import Detail from './pages/detail/DetailCard'
 import Favorite from './pages/Favorite.js'
-import NotFound from './pages/NotFound'
+import NotFound from './pages/404/NotFound'
 import Navbar from '../src/components/Navbar'
 import { Provider } from 'react-redux'
 import store from './store'

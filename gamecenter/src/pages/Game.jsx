@@ -20,6 +20,9 @@ export default () => {
             dispatch(getGames(currentPage))
         } else if (nameGame) {
             dispatch(getGames(nameGame))
+        }else{
+            dispatch(getGames(2))
+            
         }
     }, [dispatch, currentPage,nameGame])
 

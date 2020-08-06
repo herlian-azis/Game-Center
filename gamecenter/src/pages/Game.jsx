@@ -9,13 +9,14 @@ import { getGames } from '../store/action/gameAction'
 import {  useParams } from 'react-router-dom'
 
 export default () => {
-    const [currentPage, setCurrentPage] = useState(2)
+    const [currentPage, setCurrentPage] = useState()
     const { games } = useSelector(state => state.gamesReducer)
     const dispatch = useDispatch()
     const { nameGame } = useParams()
 
+    console.log(nameGame);
     useEffect(() => {
-        if (currentPage  ) {
+        if (currentPage ) {
             dispatch(getGames(currentPage))
         } else if (nameGame) {
             dispatch(getGames(nameGame))

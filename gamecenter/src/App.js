@@ -18,9 +18,6 @@ const App = () => {
         <Router>
           <Navbar />
           <Switch>
-            <Route exact path='/favorites'>
-              <Favorite />
-            </Route>
 
             <Route exact path='/'>
               <Game />
@@ -29,6 +26,9 @@ const App = () => {
               <Game />
             </Route>
 
+            <Route exact path='/favorites'>
+              <Favorite />
+            </Route>
 
             <Route exact path='/detail/:gameId'>
               <Detail />

@@ -5,8 +5,7 @@ import { Row, Container, Col } from 'react-bootstrap'
 
 
 const FavoriteList = () => {
-    const { favorites } = useSelector(state => state)
-    console.log(favorites)
+    const { favorites } = useSelector(state => state.favoriteReducer)
     if (!favorites) {
         return (
             <p>LODIINGGGGG</p>
@@ -24,7 +23,6 @@ const FavoriteList = () => {
                             <Col key={i} md={3} className='mb-5'>
                                 <Card game={fav} key={i} />
                             </Col>)
-
                     })}
                 </Row>
             </Container>

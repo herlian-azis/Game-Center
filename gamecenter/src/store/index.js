@@ -1,20 +1,13 @@
-import {createStore} from 'redux'
+import {createStore,applyMiddleware,combineReducers} from 'redux'
+import thunk from 'redux-thunk'
+import  logger from 'redux-logger'
+import {gamesReducer,favoriteReducer} from './reducer'
 
-const stateGame={
-    favorites:[]
-}
 
- const  favoriteReducer = (state = stateGame,action)=>{
-     switch (action.type) {
-         case "ADD_GAME_TO_FAVORITES":
-          return{
-              ...state , favorites: state.favorites.concat(action.payload.game)
-          }
-         default:
-             return state
-     }
- }
-
- const store = createStore(favoriteReducer)
+const reducers= combineReducers({
+    favoriteReducer,
+    gamesReducer
+})
+ const store = createStore(reducers,applyMiddleware(thunk,logger))
 
  export default store

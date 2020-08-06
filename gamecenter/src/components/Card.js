@@ -10,7 +10,6 @@ const CardComponent = (props) => {
     const dispatch = useDispatch()
     const { favorites } = useSelector(state => state.favoriteReducer)
 
-
     if (game.length < 1) {
         return(
             <p>Loadingg</p>

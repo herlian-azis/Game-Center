@@ -24,6 +24,7 @@ export const getGames = (paramValue) => {
 }
 
 export const getGamesById = gameId => {
+    console.log(gameId,'dadasd')
     return dispatch => {
         dispatch({
             type: "SET_LOADING"

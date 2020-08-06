@@ -12,7 +12,7 @@ const gamesReducer = (state = initaState, action) => {
             }
         case "SET_GAME_BY_ID":
             return {
-                ...state, games: action.payload.game,
+                ...state, game: action.payload.game,
                 loading:false
             }
         case "SET_LOADING":

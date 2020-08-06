@@ -1,22 +1,28 @@
-import React, {useState } from 'react'
+import React, {useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import useFetchById from '../../hooks/useFetchById'
+// import useFetchById from '../../hooks/useFetchById'
 import { Row } from 'react-bootstrap'
 import Loading from '../Loading/Loading'
 import Modal from '../../components/Modal'
+import { useSelector, useDispatch } from 'react-redux'
+import { getGamesById } from '../../store/action/gameAction'
+
 
 import './Detail.css'
 const DetailCard = () => {
 
 	const { gameId } = useParams()
 	const [modalShow, setModalShow] = useState(false);
-	const [game, error2, loading1] = useFetchById(`https://api.rawg.io/api/games/${gameId}`)
+    const  {game}  = useSelector(state => state.gamesReducer)
+    const dispatch = useDispatch()
+	useEffect(()=>{
+		dispatch(getGamesById(gameId))
+	},[dispatch,gameId])
 
-	if (loading1) {
+	if (game == null) {
 		return (<Loading />)
 	}
-console.log(game);
-
+	
 	const platform = game.platforms.map((payload, i) => {
 		if (i === game.platforms.length - 1) {
 			return payload.platform.name
@@ -24,11 +30,6 @@ console.log(game);
 			return payload.platform.name + ', '
 		}
 	})
-
-	if (error2) {
-		return (<p>error</p>)
-	}
-
 
 	return (
 		<div className="game-card">

@@ -6,6 +6,7 @@ import { Row, Container, Col } from 'react-bootstrap'
 
 const FavoriteList = () => {
     const { favorites } = useSelector(state => state.favoriteReducer)
+    console.log(favorites,'dasdasdsa')
     if (!favorites) {
         return (
             <p>LODIINGGGGG</p>

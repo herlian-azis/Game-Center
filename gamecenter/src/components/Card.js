@@ -16,7 +16,6 @@ const CardComponent = (props) => {
             <p>Loadingg</p>
         )
     }
-    console.log(favorites,'favvvv')
     const idfav = favorites.map(fav => {
         return fav.id
     })

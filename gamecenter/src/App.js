@@ -18,14 +18,17 @@ const App = () => {
         <Router>
           <Navbar />
           <Switch>
+            <Route exact path='/favorites'>
+              <Favorite />
+            </Route>
 
             <Route exact path='/'>
               <Game />
             </Route>
-
-            <Route exact path='/favorites'>
-              <Favorite />
+            <Route exact path='/:nameGame'>
+              <Game />
             </Route>
+
 
             <Route exact path='/detail/:gameId'>
               <Detail />

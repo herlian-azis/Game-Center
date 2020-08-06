@@ -3,10 +3,6 @@ import  classes from './NotFound.module.css'
 
 
 const NotFound =()=>{
-
-
-
-
     return(
         <div>
         <div id={classes.notfound}>

@@ -14,7 +14,7 @@ const FavoriteList = () => {
     }
     return (
         <>
-            <Container> 
+           <Container> 
                 <br/>
                 <Row style={{
                     marginRight: -186 + 'px',

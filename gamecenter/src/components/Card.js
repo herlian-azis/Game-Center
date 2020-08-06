@@ -46,6 +46,7 @@ const CardComponent = (props) => {
 
                     <Button variant="primary" onClick={checkDetail}>Detail</Button>
                     <br />
+                    <br />
                     <Button variant="warning"  disabled={idfav.includes(game.id)} onClick={() => addToFav()} >Add favorites</Button>
                 </Card.Body>
             </Card>

@@ -5,7 +5,6 @@ import Card from '../components/Card'
 import useFetch from '../hooks/useFetch'
 import Loading from './Loading/Loading'
 export default () => {
-    const [title] = useState('Game Center')
     const [currentPage, setCurrentPage] = useState(2)
     const [games, error, loading] = useFetch(`https://api.rawg.io/api/games?page=${currentPage}`)
 
@@ -17,7 +16,7 @@ export default () => {
     }
     return (
         <div>
-            <h1>{title}</h1>
+            <h1 style={{color:'white'}}>Game Center</h1>
             <Container>
                 <Pagination
                     currentPage={currentPage}

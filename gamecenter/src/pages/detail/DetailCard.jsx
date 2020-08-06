@@ -15,7 +15,7 @@ const DetailCard = () => {
 	if (loading1) {
 		return (<Loading />)
 	}
-console.log(game.clip);
+console.log(game);
 
 	const platform = game.platforms.map((payload, i) => {
 		if (i === game.platforms.length - 1) {
@@ -31,23 +31,26 @@ console.log(game.clip);
 
 
 	return (
-		<div className="recipe-card">
+		<div className="game-card">
 			<aside>
 				<img src={game.background_image} alt="" />	
 					
-				<a  className="button" onClick={() => setModalShow(true)}><span className="icon icon-play"></span></a>
+				<button  className="button"  onClick={() => setModalShow(true)}><span className="icon icon-play"></span></button>
 				<Modal show={modalShow} onHide={() => setModalShow(false)} clip={game.clip.clips.full}/>
 			</aside>
 			<article>
 				<h2>{game.name}</h2>
 				<Row>
-					{game.tags.map((tag, i) => {
-						return (<h3 key={i} style={{borderColor:"red"}}> #{tag.name} ,</h3>)
+					{game.genres.map((tag, i) => {
+						return (
+						<h3 key={i} > #{tag.name} &nbsp;&nbsp;</h3>
+						)
 					})}
+					<img src="vr-gaming.svg" alt="" height=''/>
 				</Row>
 				<ul>
-					<li><span className='icon icon-users'></span><span>1</span></li>
-					<li><span className='icon icon-clock'></span><span>15 min</span></li>
+				<li><span className='icon icon-users'></span><span>{game.ratings_count}</span></li>
+					<li><span className='icon icon-clock'></span><span>{game.playtime}</span></li>
 					<li><span className='icon icon-level'></span><span>Hard level</span></li>
 					<li><span className='icon icon-calories'></span><span>248</span></li>
 				</ul>

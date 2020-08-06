@@ -1,13 +1,13 @@
-import {createStore,applyMiddleware,combineReducers} from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
-import  logger from 'redux-logger'
-import {gamesReducer,favoriteReducer} from './reducer'
+import logger from 'redux-logger'
+import { gamesReducer, favoriteReducer } from './reducer'
 
 
-const reducers= combineReducers({
+const reducers = combineReducers({
     favoriteReducer,
     gamesReducer
 })
- const store = createStore(reducers,applyMiddleware(thunk,logger))
+const store = createStore(reducers, applyMiddleware(thunk, logger))
 
- export default store
+export default store

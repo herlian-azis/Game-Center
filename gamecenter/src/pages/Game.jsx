@@ -6,17 +6,15 @@ import Loading from './Loading/Loading'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { getGames } from '../store/action/gameAction'
-import { useLocation, useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom'
 
 export default () => {
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(2)
     const { games } = useSelector(state => state.gamesReducer)
     const dispatch = useDispatch()
     const { nameGame } = useParams()
 
-console.log(nameGame);
     useEffect(() => {
-
         if (currentPage  ) {
             dispatch(getGames(currentPage))
         } else if (nameGame) {
@@ -25,7 +23,7 @@ console.log(nameGame);
     }, [dispatch, currentPage,nameGame])
 
 
-    
+
     if (!games) {
         return (<Loading />)
     }

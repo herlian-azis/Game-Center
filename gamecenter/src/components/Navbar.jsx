@@ -27,7 +27,9 @@ const NavbarComponent = () => {
                     <Form inline onSubmit={(e)=> doSearch(e)}>
                         <FormControl 
                             value={search}
+                            
                             onChange={(e)=> setSearch(e.target.value) }
+
                             type="text" placeholder="Search" className="mr-sm-2" />
                                 
                         <Button  type='submit' variant="outline-dark">Search</Button>

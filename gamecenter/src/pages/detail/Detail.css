@@ -1,0 +1,140 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+  }
+  
+  html {
+	height: 100%;
+  }
+  
+  body {
+	  /* background-image: url("https://cutewallpaper.org/21/4k-gaming-wallpaper/Awesome-Gaming-Wallpapers-4k-for-Pc-Download-.jpg"); */
+	background-color: #e3e7bf;
+	/* background-image: -webkit-linear-gradient(-225deg, #19d3d1 5%, #57abf2); */
+	/* background-image: linear-gradient(-45deg,#19d3d1 5%, #57abf2); */
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+  }
+  
+  img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+  }
+  
+  .game-card {
+	background: #fff;
+	margin: 4em auto;
+	width: 90%;
+	max-width: 496px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+  }
+  .game-card aside {
+	position: relative;
+  }
+  .game-card aside img {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+  }
+  .game-card aside .button {
+	background: #ff0000;
+	display: inline-block;
+	position: absolute;
+	top: 80%;
+	right: 3%;
+	width: 4.0625em;
+	height: 4.0625em;
+	border-radius: 4.0625em;
+	line-height: 4.0625em;
+	text-align: center;
+  }
+  .game-card aside .button .icon {
+	vertical-align: middle;
+  }
+  .game-card article {
+	padding: 1.25em 1.5em;
+  }
+  .game-card article ul {
+	list-style: none;
+	margin: 0.5em 0 0;
+	padding: 0;
+  }
+  .game-card article ul li {
+	display: inline-block;
+	margin-left: 1em;
+	line-height: 1em;
+  }
+  .game-card article ul li:first-child {
+	margin-left: 0;
+  }
+  .game-card article ul li .icon {
+	vertical-align: bottom;
+  }
+  .game-card article ul li span:nth-of-type(2) {
+	margin-left: 0.5em;
+	font-size: 0.8em;
+	font-weight: 300;
+	vertical-align: middle;
+	color: #838689;
+  }
+  .game-card article h2, .game-card article h3 {
+	margin: 0;
+	font-weight: 300;
+  }
+  .game-card article h2 {
+	font-size: 1.75em;
+	color: #222222;
+  }
+  .game-card article h3 {
+	font-size: 0.9375em;
+	color: #838689;
+  }
+  .game-card article p {
+	margin: 1.25em 0;
+	font-size: 0.8125em;
+	font-weight: 400;
+	color: #222222;
+  }
+  .game-card article p span {
+	font-weight: 700;
+	color: #000000;
+  }
+  .game-card article .ingredients {
+	margin: 2em 0 0.5em;
+  }
+  .game-card .icon {
+	display: inline;
+	display: inline-block;
+	background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/recipe-card-icons.svg);
+	background-repeat: no-repeat;
+  }
+  .game-card .icon-calories, .game-card .icon-calories\:regular {
+	background-position: 0 0;
+	width: 16px;
+	height: 19px;
+  }
+  .game-card .icon-clock, .game-card .icon-clock\:regular {
+	background-position: 0 -19px;
+	width: 20px;
+	height: 20px;
+  }
+  .game-card .icon-level, .game-card .icon-level\:regular {
+	background-position: 0 -39px;
+	width: 16px;
+	height: 19px;
+  }
+  .game-card .icon-play, .game-card .icon-play\:regular {
+	background-position: 0 -58px;
+	width: 21px;
+	height: 26px;
+  }
+  .game-card .icon-users, .game-card .icon-users\:regular {
+	background-position: 0 -84px;
+	width: 18px;
+	height: 18px;
+  }
+  
